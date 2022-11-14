@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Safe Pin Usage</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script
+      data-main="scripts/main.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+      integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script data-main="scripts/main"></script>
+  </head>
+  <body>
+    <div style="display: flex; gap: 12px; height: 100vh;">
+      <div style="flex-basis: 480px; overflow-y: auto;">
+        <div data-bind="foreach: functionTree">
+          <h3>
+            <button data-bind="visible: !visible(), click: show">+</button>
+            <button data-bind="visible: visible, click: hide">—</button>
+            <span data-bind="text: name"></span>
+          </h3>
+          <div data-bind="visible: visible">
+            <hr />
+            <div data-bind="foreach: items">
+              <div>
+                <label>
+                  <input type="checkbox" data-bind="checked: selected, enable: allowed" />
+                  <span data-bind="text: name"></span>
+                  (<span data-bind="text: description"></span>)
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <canvas id="canvas" data-bind="pinMap: { pins: pinTree, ready: ready }"></canvas>
+      </div>
+    </div>
+  </body>
+</html>
