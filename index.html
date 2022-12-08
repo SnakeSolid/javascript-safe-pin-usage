@@ -4,40 +4,69 @@
     <meta charset="utf-8" />
     <title>Safe Pin Usage</title>
 
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script
-      data-main="scripts/main.js"
+      data-main="/scripts/main.js"
       src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
       integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script data-main="scripts/main"></script>
   </head>
   <body>
-    <div style="display: flex; gap: 12px; height: 100vh;">
+    <div id="app" style="display: flex; gap: 12px; height: 100vh;">
       <div style="flex-basis: 480px; overflow-y: auto;">
-        <div data-bind="foreach: functionTree">
-          <h3>
-            <button data-bind="visible: !visible(), click: show">+</button>
-            <button data-bind="visible: visible, click: hide">—</button>
-            <span data-bind="text: name"></span>
-          </h3>
-          <div data-bind="visible: visible">
-            <hr />
-            <div data-bind="foreach: items">
-              <div>
-                <label>
-                  <input type="checkbox" data-bind="checked: selected, enable: allowed" />
-                  <span data-bind="text: name"></span>
-                  (<span data-bind="text: description"></span>)
-                </label>
-              </div>
+        <div class="ui basic segment">
+          <select class="ui fluid dropdown" v-model="selectedBoard">
+            <option v-for="board in boards" :value="board">{{ board.name }}</option>
+          </select>
+
+          <div v-for="group in groups">
+            <p></p>
+
+            <h3>
+              <span v-if="group.expand">
+                <button class="ui compact circular icon button" @click="hideGroup(group)">
+                  <i class="caret down icon"></i>
+                </button>
+              </span>
+              <span v-else>
+                <button class="ui compact circular icon button" @click="showGroup(group)">
+                  <i class="caret right icon"></i>
+                </button>
+              </span>
+              &ensp;
+              <span>{{ group.name }}</span>
+            </h3>
+
+            <div v-if="group.expand">
+              <table class="ui black selectable compact table">
+                <tr
+                  v-for="alternateFunction in group.alternateFunctions"
+                  @click="toggleFunction(alternateFunction)"
+                  :class="{ disabled: !alternateFunction.enabled }"
+                >
+                  <td class="collapsing">
+                    <div class="ui checkbox">
+                      <i class="blue check circle icon" v-if="alternateFunction.selected"></i>
+                      <i class="gray circle outline icon" v-else></i>
+                    </div>
+                  </td>
+                  <td>{{ alternateFunction.name }}</td>
+                  <td>{{ alternateFunction.description }}</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
       </div>
+
       <div style="flex: 1;">
         <canvas id="canvas" data-bind="pinMap: { pins: pinTree, ready: ready }"></canvas>
       </div>

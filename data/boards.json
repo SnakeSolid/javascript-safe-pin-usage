@@ -1,0 +1,15 @@
+[
+	{
+		"name": "STM32G030F6P6",
+		"description": "STM32G030Fx TSSOP20 pinout",
+		"image": "/images/stm32g030f6p6.png",
+		"pins": "/data/pins-stm32g030-tssop20.json",
+		"functions": "/data/functions-stm32g030.json"
+	}, {
+		"name": "STM32G030F6P6 DevEBox board",
+		"description": "STM32_G030 DevEBox V20",
+		"image": "/images/stm32g030f6p6-board.png",
+		"pins": "/data/pins-stm32g030-devebox.json",
+		"functions": "/data/functions-stm32g030.json"
+	}
+]

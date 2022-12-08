@@ -3,332 +3,304 @@
 requirejs.config({
 	baseUrl: "scripts",
 	paths: {
-		knockout: "https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min",
+		vue: "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.global",
+	},
+	shim: {
+		vue: {
+			exports: "Vue",
+		},
 	},
 	waitSeconds: 10,
 });
 
-requirejs(["knockout", "pins", "functions", "colors"], function(ko, pins, functions, colors) {
+requirejs(["vue", "colors"], function(vue, colors) {
+	const NAME_PADDING = 4.0;
+
 	const canvas = document.getElementById("canvas");
 	canvas.width = canvas.parentNode.clientWidth;
 	canvas.height = canvas.parentNode.clientHeight;
 
-	ko.bindingHandlers.pinMap = {
-		init: function(element, valueAccessor, allBindings, _, bindingContext) {
-			const value = ko.unwrap(valueAccessor());
-			const image = new Image();
-			image.addEventListener("load", () => value.ready(true), false);
-			image.src = "images/stm32g030f6p6-board.png";
+	vue.createApp({
+		mounted() {
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			var image = new Image();
+			image.addEventListener("load", () => this.updateCanvas());
+			image.src = "/images/dummy.png";
 
-			ko.utils.domData.set(element, "image", image);
+			this.vueWidth = canvas.width;
+			this.vueHeight = canvas.height;
+			this.vueContext = context;
+			this.vueImage = image;
+
+			fetch("/data/boards.json")
+				.then(result => result.json())
+				.then(result => (this.boards = result));
 		},
-		update: function(element, valueAccessor, allBindings, _, bindingContext) {
-			const value = ko.unwrap(valueAccessor());
 
-			if (!value.ready()) {
-				return;
-			}
+		data() {
+			return {
+				selectedBoard: null,
+				boards: [],
+				pins: [],
+				groups: [],
+			};
+		},
 
-			const image = ko.utils.domData.get(element, "image");
-			const data = ko.dataFor(element);
-			const context = canvas.getContext("2d");
-			const centerX = canvas.width / 2.0;
-			const centerY = canvas.height / 2.0;
-			const imageWidth = image.width;
-			const imageHeight = image.height;
+		watch: {
+			selectedBoard(newValue, oldValue) {
+				const image = newValue.image;
+				const pins = newValue.pins;
+				const functions = newValue.functions;
 
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.drawImage(image, centerX - imageWidth / 2.0, centerY - imageHeight / 2.0);
+				this.vueImage.src = image;
 
-			for (const item of value.pins()) {
-				const pin = item.pin;
-				const name = item.name;
-				const groups = item.groups;
-				const selected = item.selected();
-				const textAlign = item.position.align === "left" ? "start" : "end";
-				const direction = item.position.align === "left" ? -1.0 : 1.0;
-				let x = centerX - imageWidth / 2.0 + item.position.x;
-				let y = centerY - imageHeight / 2.0 + item.position.y;
+				Promise.all([
+					fetch(pins).then(result => result.json()),
+					fetch(functions).then(result => result.json()),
+				]).then(values => this.updateData(values[0], values[1]));
+			},
 
-				context.fillStyle = "#ffffff";
-				context.strokeStyle = "#000000";
-				context.lineWidth = 2.0;
-				context.beginPath();
-				context.arc(x, y, 5.0, 0.0, 360.0);
-				context.moveTo(x + direction * 5, y);
-				context.lineTo(x + direction * 30, y);
-				context.fill();
-				context.stroke();
+			groups: {
+				handler(_newValue, _oldValue) {
+					this.updateCanvas();
+				},
+				deep: true,
+			},
+		},
 
-				context.font = "bold 16px sans";
-				context.textAlign = textAlign;
-				context.textBaseline = "middle";
-				context.fillStyle = "#000000";
-				context.fillText(pin, x - direction * 15, y);
+		methods: {
+			showGroup(group) {
+				group.expand = true;
+			},
 
-				x += direction * 30;
-				y += 0;
+			hideGroup(group) {
+				group.expand = false;
+			},
 
-				if (selected) {
-					const padding = 3.0;
-					const name = item.functionNames();
-					const metrics = context.measureText(name);
-					const width = Math.max(50, metrics.width + 2 * padding);
+			toggleFunction(item) {
+				item.selected = !item.selected && item.enabled;
 
-					context.fillStyle = "#e0e0e0";
+				const usesPins = new Set(
+					this.groups
+						.flatMap(row => row.alternateFunctions)
+						.filter(row => row.selected)
+						.flatMap(row => row.pins)
+						.map(pin => pin.index)
+				);
+
+				for (const group of this.groups) {
+					for (const alternateFunction of group.alternateFunctions) {
+						if (alternateFunction.selected) {
+							continue;
+						}
+
+						const isUsed = alternateFunction.pins.some(row => usesPins.has(row.index));
+
+						alternateFunction.enabled = !isUsed;
+					}
+				}
+			},
+
+			isPinUsed(pin) {
+				for (const alternateFunction of pin.alternateFunctions) {
+					for (const item of alternateFunction.items) {
+						if (item.selected) {
+							return true;
+						}
+					}
+				}
+
+				return false;
+			},
+
+			functionName(pin) {
+				for (const alternateFunction of pin.alternateFunctions) {
+					for (const item of alternateFunction.items) {
+						if (item.selected) {
+							for (const functionPin of item.pins) {
+								if (pin.index === functionPin.index) {
+									return functionPin.function;
+								}
+							}
+
+							return item.name;
+						}
+					}
+				}
+
+				return "";
+			},
+
+			updateData(pins, items) {
+				const groupMap = {};
+				const pinMap = {};
+				const alternateFunctionNames = new Set();
+
+				for (const pin of pins) {
+					pinMap[pin.index] = {
+						index: pin.index,
+						description: pin.description,
+						position: pin.position,
+						alternateFunctions: [],
+					};
+				}
+
+				for (const item of items) {
+					const groupName = item.group;
+					const alternateFunctionName = item.name;
+					const itemRef = {
+						group: item.group,
+						name: item.name,
+						description: item.description,
+						pins: item.pins,
+						selected: false,
+						enabled: true,
+					};
+
+					if (groupName in groupMap) {
+						groupMap[groupName].alternateFunctions.push(itemRef);
+					} else {
+						groupMap[groupName] = { name: groupName, expand: true, alternateFunctions: [itemRef] };
+					}
+
+					for (const pin of item.pins) {
+						const index = pin.index;
+						const description = pin.description;
+
+						if (index in pinMap) {
+							const alternateFunctions = pinMap[index].alternateFunctions;
+							const alternateFunction = alternateFunctions.find(
+								alternameFunction => alternameFunction.name === alternateFunctionName
+							);
+
+							if (alternateFunction) {
+								alternateFunction.items.push(itemRef);
+							} else {
+								alternateFunctions.push({
+									name: alternateFunctionName,
+									color: "#eeeeee",
+									items: [itemRef],
+								});
+							}
+						}
+					}
+
+					alternateFunctionNames.add(alternateFunctionName);
+				}
+
+				const alternateFunctionList = Array.from(alternateFunctionNames);
+				alternateFunctionList.sort();
+				const groupColors = new Map(alternateFunctionList.map((name, index) => [name, colors(index)]));
+
+				for (const pin of Object.values(pinMap)) {
+					for (const alternateFunction of pin.alternateFunctions) {
+						alternateFunction.color = groupColors.get(alternateFunction.name);
+					}
+				}
+
+				this.pins = Object.values(pinMap);
+				this.groups = Object.values(groupMap);
+			},
+
+			updateCanvas() {
+				const image = this.vueImage;
+				const context = this.vueContext;
+				const centerX = this.vueWidth / 2.0;
+				const centerY = this.vueHeight / 2.0;
+
+				context.clearRect(0, 0, this.vueWidth, this.vueHeight);
+				context.drawImage(image, centerX - image.width / 2, centerY - image.height / 2);
+
+				if (this.selectedBoard) {
+					context.font = "bold 18px sans";
+					context.textAlign = "center";
+					context.textBaseline = "bottom";
+					context.fillStyle = "#000000";
+					context.fillText(this.selectedBoard.description, centerX, centerY - image.height / 2 - 10);
+				}
+
+				for (const pin of this.pins) {
+					let translate = pin.position.align == "left" ? -1 : 1;
+					let x = pin.position.x + centerX - image.width / 2;
+					let y = pin.position.y + centerY - image.height / 2;
+
+					context.fillStyle = "#ffffff";
 					context.strokeStyle = "#000000";
 					context.lineWidth = 2.0;
 					context.beginPath();
-					context.moveTo(x + direction * width, y + 10);
-					context.lineTo(x + direction * width, y - 10);
-					context.lineTo(x - direction * 0, y - 10);
-					context.lineTo(x - direction * 0, y + 10);
-					context.lineTo(x + direction * width, y + 10);
+					context.moveTo(x + translate * 0, y);
+					context.lineTo(x + translate * 15, y);
 					context.fill();
 					context.stroke();
 
-					context.font = "bold 16px sans";
-					context.textAlign = "center";
-					context.textBaseline = "middle";
-					context.fillStyle = "#000000";
-					context.fillText(name, x + (direction * width) / 2.0, y);
-				} else {
-					let isFirst = true;
+					x += translate * 15.0;
+					y += 0.0;
 
-					for (const group of groups) {
-						if (isFirst) {
-							isFirst = false;
-						} else {
-							context.fillStyle = "#ffffff";
-							context.strokeStyle = "#000000";
-							context.lineWidth = 2.0;
-							context.beginPath();
-							context.moveTo(x + direction * 0, y);
-							context.lineTo(x + direction * 15, y);
-							context.fill();
-							context.stroke();
+					if (this.isPinUsed(pin)) {
+						const functionName = this.functionName(pin);
 
-							x += direction * 15;
-							y += 0;
-						}
+						context.font = "14px sans";
 
-						const padding = 3.0;
-						const name = group.name;
-						const color = group.color;
-						const metrics = context.measureText(name);
-						const width = Math.max(50, metrics.width + 2 * padding);
+						const metrics = context.measureText(functionName);
+						const textWidth = Math.max(50, metrics.width + 2.0 * NAME_PADDING);
 
-						context.fillStyle = color;
-						context.strokeStyle = "#444444";
+						context.fillStyle = "#eeeeee";
+						context.strokeStyle = "#000000";
 						context.lineWidth = 2.0;
 						context.beginPath();
-						context.moveTo(x + direction * width, y + 10);
-						context.lineTo(x + direction * width, y - 10);
-						context.lineTo(x - direction * 0, y - 10);
-						context.lineTo(x - direction * 0, y + 10);
-						context.lineTo(x + direction * width, y + 10);
+						context.rect(x + ((translate - 1) * textWidth) / 2.0, y - 9.0, textWidth, 18.0);
 						context.fill();
 						context.stroke();
 
-						context.font = "bold 16px sans";
-						context.textAlign = "center";
-						context.textBaseline = "middle";
 						context.fillStyle = "#000000";
-						context.fillText(name, x + (direction * width) / 2.0, y);
-
-						x += direction * width;
-						y += 0;
-					}
-				}
-			}
-		},
-	};
-
-	function PinGroupsModel(name, color, functions) {
-		const self = this;
-		self.name = name;
-		self.color = color;
-		self.functions = functions;
-		self.selected = ko.pureComputed(function() {
-			return self.functions.some(f => f.selected());
-		});
-	}
-
-	function PinModel(pin, position, name, groups) {
-		const self = this;
-		self.pin = pin;
-		self.position = position;
-		self.name = name;
-		self.groups = groups;
-		self.selected = ko.pureComputed(function() {
-			return self.groups.some(f => f.selected());
-		});
-		self.functionNames = ko.pureComputed(function() {
-			const result = [];
-
-			for (const group of self.groups.filter(g => g.selected())) {
-				for (const item of group.functions.filter(f => f.selected())) {
-					if (self.pin in item.pins) {
-						result.push(item.pins[self.pin]);
-					}
-				}
-			}
-
-			return result.join(" ");
-		});
-	}
-
-	function FunctionModel(id, group, name, description, pins, callback) {
-		const self = this;
-		self.id = id;
-		self.group = group;
-		self.name = name;
-		self.description = description;
-		self.pins = pins;
-		self.allowed = ko.observable(true);
-		self.selected = ko.observable(false);
-		self.selected.subscribe(callback);
-	}
-
-	function GroupModel(name, items) {
-		const self = this;
-		self.name = name;
-		self.items = items;
-		self.visible = ko.observable(true);
-		self.show = function() {
-			self.visible(true);
-		};
-		self.hide = function() {
-			self.visible(false);
-		};
-	}
-
-	function ViewModel() {
-		const self = this;
-		self.ready = ko.observable(false);
-		self.functionTree = ko.observableArray([]);
-		self.pinTree = ko.observable({});
-		self.pins = [];
-		self.functions = [];
-
-		self.functionsInGroup = ko.computed(function() {
-			return self.functionTree().filter(item => item.group === this);
-		});
-
-		self.updateFunctions = function() {
-			const selectedPins = new Set();
-
-			for (const group of self.functionTree()) {
-				for (const item of group.items) {
-					if (item.selected()) {
-						const pins = Object.keys(item.pins);
-
-						pins.forEach(pin => selectedPins.add(pin));
-					}
-				}
-			}
-
-			for (const group of self.functionTree()) {
-				for (const item of group.items) {
-					if (!item.selected()) {
-						const pins = Object.keys(item.pins);
-						const found = pins.some(pin => selectedPins.has(pin));
-
-						item.allowed(!found);
-					}
-				}
-			}
-		};
-
-		self.updateTrees = function() {
-			const nameToGroup = {};
-			const functionMap = {};
-			const pinMap = {};
-
-			for (let index = 0; index < self.functions.length; index += 1) {
-				const row = self.functions[index];
-				const groupName = row.group;
-				const functionName = row.name;
-				const data = new FunctionModel(
-					index,
-					groupName,
-					functionName,
-					row.description,
-					row.pins,
-					self.updateFunctions
-				);
-
-				if (groupName in functionMap) {
-					functionMap[groupName].push(data);
-				} else {
-					functionMap[groupName] = [data];
-				}
-
-				for (const pin of Object.keys(row.pins)) {
-					if (pin in pinMap) {
-						pinMap[pin].push(data);
+						context.textAlign = "middle";
+						context.textBaseline = "middle";
+						context.beginPath();
+						context.fillText(functionName, x + (translate * textWidth) / 2.0, y);
 					} else {
-						pinMap[pin] = [data];
-					}
-				}
+						let isFirst = true;
 
-				nameToGroup[functionName] = groupName;
-			}
+						for (const alternateFunction of pin.alternateFunctions) {
+							if (isFirst) {
+								isFirst = false;
+							} else {
+								context.strokeStyle = "#000000";
+								context.lineWidth = 2.0;
+								context.beginPath();
+								context.moveTo(x + translate * 0, y);
+								context.lineTo(x + translate * 10, y);
+								context.stroke();
 
-			const functionGroups = Array.from(new Set(self.functions.map(f => f.group)));
-			functionGroups.sort();
-			const functionTree = functionGroups.map(function(name) {
-				return new GroupModel(name, functionMap[name]);
-			});
-			self.functionTree(functionTree);
+								x += translate * 10.0;
+								y += 0.0;
+							}
 
-			const groupColors = {};
+							context.font = "14px sans";
 
-			for (const index in functionGroups) {
-				const name = functionGroups[index];
+							const metrics = context.measureText(alternateFunction.name);
+							const textWidth = Math.max(50, metrics.width + 2.0 * NAME_PADDING);
 
-				groupColors[name] = colors(index);
-			}
+							context.fillStyle = alternateFunction.color;
+							context.strokeStyle = "#000000";
+							context.lineWidth = 2.0;
+							context.beginPath();
+							context.rect(x + ((translate - 1) * textWidth) / 2.0, y - 9.0, textWidth, 18.0);
+							context.fill();
+							context.stroke();
 
-			const pinTree = self.pins.map(function(item) {
-				const pin = item.pin;
-				const position = item.position;
-				const name = item.name;
-				const functionMap = {};
+							context.fillStyle = "#000000";
+							context.textAlign = "middle";
+							context.textBaseline = "middle";
+							context.beginPath();
+							context.fillText(alternateFunction.name, x + (translate * textWidth) / 2.0, y);
 
-				if (pin in pinMap) {
-					for (const item of pinMap[pin]) {
-						const functionName = item.name;
-
-						if (functionName in functionMap) {
-							functionMap[functionName].push(item);
-						} else {
-							functionMap[functionName] = [item];
+							x += translate * textWidth;
+							y += 0.0;
 						}
 					}
 				}
-
-				const functionNames = Object.keys(functionMap);
-				functionNames.sort();
-				const groups = functionNames.map(
-					name => new PinGroupsModel(name, groupColors[nameToGroup[name]], functionMap[name])
-				);
-
-				return new PinModel(pin, position, name, groups);
-			});
-			self.pinTree(pinTree);
-		};
-
-		pins(function(pins) {
-			self.pins = pins;
-			self.updateTrees();
-		});
-
-		functions(function(functions) {
-			self.functions = functions;
-			self.updateTrees();
-		});
-	}
-
-	ko.applyBindings(new ViewModel());
+			},
+		},
+	}).mount("#app");
 });

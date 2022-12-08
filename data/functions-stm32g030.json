@@ -1,0 +1,904 @@
+[
+	{ "group": "System", "name": "SWD", "description": "IO = PA13, CLK = PA14", "pins": [
+		{ "index": 18, "function": "SWDIO" },
+		{ "index": 19, "function": "SWCLK" }
+	] },
+	{ "group": "System", "name": "OSC", "description": "PC14 = OSC_IN, PC15 = OSC_OUT", "pins": [
+		{ "index": 2, "function": "OSC_IN" },
+		{ "index": 3, "function": "OSC_OUT" }
+	] },
+	{ "group": "System", "name": "PWR", "description": "VDD, VSS", "pins": [
+		{ "index": 4, "function": "VDD" },
+		{ "index": 5, "function": "VSS" }
+	] },
+	{ "group": "System", "name": "NRST", "description": "NRST", "pins": [
+		{ "index": 6, "function": "NRST" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN0 = PA0", "pins": [
+		{ "index": 7, "function": "ADC_IN0" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN1 = PA1", "pins": [
+		{ "index": 8, "function": "ADC_IN1" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN2 = PA2", "pins": [
+		{ "index": 9, "function": "ADC_IN2" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN3 = PA3", "pins": [
+		{ "index": 10, "function": "ADC_IN3" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN4 = PA4", "pins": [
+		{ "index": 11, "function": "ADC_IN4" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN5 = PA5", "pins": [
+		{ "index": 12, "function": "ADC_IN5" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN6 = PA6", "pins": [
+		{ "index": 13, "function": "ADC_IN6" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN7 = PA7", "pins": [
+		{ "index": 14, "function": "ADC_IN7" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN8 = PB0", "pins": [
+		{ "index": 15, "function": "ADC_IN8" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN9 = PB1", "pins": [
+		{ "index": 15, "function": "ADC_IN9" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN10 = PB2", "pins": [
+		{ "index": 15, "function": "ADC_IN10" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN11 = PB7", "pins": [
+		{ "index": 1, "function": "ADC_IN11" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN15 = PA11", "pins": [
+		{ "index": 16, "function": "ADC_IN15" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN16 = PA12", "pins": [
+		{ "index": 17, "function": "ADC_IN16" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN17 = PA13", "pins": [
+		{ "index": 18, "function": "ADC_IN17" }
+	] },
+	{ "group": "ADC", "name": "ADC", "description": "IN18 = PA14", "pins": [
+		{ "index": 19, "function": "ADC_IN18" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SCL = PA11, SDA = PA12", "pins": [
+		{ "index": 16, "function": "I2C2_SCL" },
+		{ "index": 17, "function": "I2C2_SDA" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SCL = PB6, SCL = PB8", "pins": [
+		{ "index": 20, "function": "I2C2_SCL" },
+		{ "index": 1, "function": "I2C2_SCL" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SCL = PB6, SDA = PB9", "pins": [
+		{ "index": 20, "function": "I2C2_SCL" },
+		{ "index": 2, "function": "I2C2_SDA" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SCL = PA9, SDA = PA10", "pins": [
+		{ "index": 16, "function": "I2C2_SCL" },
+		{ "index": 17, "function": "I2C2_SDA" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SMBA = PA1", "pins": [
+		{ "index": 8, "function": "I2C2_SMBA" }
+	] },
+	{ "group": "I2C", "name": "I2C2", "description": "SMBA = PB5", "pins": [
+		{ "index": 20, "function": "I2C2_SMBA" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA12, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA12, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA12, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA2, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA2, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA2, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA7, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA7, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PA7, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PB5, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PB5, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA11, SD = PB5, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA12, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA12, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA12, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA2, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA2, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA2, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA7, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA7, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PA7, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PB5, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PB5, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PA6, SD = PB5, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA12, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA12, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA12, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA2, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA2, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA2, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA7, WS = PA15", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA7, WS = PA4", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA1, MCK = PB4, SD = PA7, WS = PB0", "pins": [
+		{ "index": 8, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA12, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA12, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA12, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA2, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA2, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA2, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA7, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA7, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PA7, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PB5, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PB5, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA11, SD = PB5, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA12, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA12, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA12, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA2, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA2, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA2, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA7, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA7, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PA7, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PB5, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PB5, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PA6, SD = PB5, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 20, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA12, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA12, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA12, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA2, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA2, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA2, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA7, WS = PA15", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA7, WS = PA4", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PA5, MCK = PB4, SD = PA7, WS = PB0", "pins": [
+		{ "index": 12, "function": "I2S1_CK" },
+		{ "index": 20, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA12, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA12, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA12, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA2, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA2, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA2, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA7, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA7, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA11, SD = PA7, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 16, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA12, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA12, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA12, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 17, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA2, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA2, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA2, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 9, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA7, WS = PA15", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 19, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA7, WS = PA4", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 11, "function": "I2S1_WS" }
+	] },
+	{ "group": "I2S", "name": "I2S1", "description": "CK = PB3, MCK = PA6, SD = PA7, WS = PB0", "pins": [
+		{ "index": 20, "function": "I2S1_CK" },
+		{ "index": 13, "function": "I2S1_MCK" },
+		{ "index": 14, "function": "I2S1_SD" },
+		{ "index": 15, "function": "I2S1_WS" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA12, SCK = PA1", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA12, SCK = PA5", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA12, SCK = PB3", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA2, SCK = PA1", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA2, SCK = PA5", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA2, SCK = PB3", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA7, SCK = PA1", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA7, SCK = PA5", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PA7, SCK = PB3", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PB5, SCK = PA1", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 20, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA11, MOSI = PB5, SCK = PA5", "pins": [
+		{ "index": 16, "function": "SPI1_MISO" },
+		{ "index": 20, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA12, SCK = PA1", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA12, SCK = PA5", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA12, SCK = PB3", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA2, SCK = PA1", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA2, SCK = PA5", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA2, SCK = PB3", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA7, SCK = PA1", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA7, SCK = PA5", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PA7, SCK = PB3", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 20, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PB5, SCK = PA1", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 20, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PA6, MOSI = PB5, SCK = PA5", "pins": [
+		{ "index": 13, "function": "SPI1_MISO" },
+		{ "index": 20, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA12, SCK = PA1", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA12, SCK = PA5", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 17, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA2, SCK = PA1", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA2, SCK = PA5", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 9, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA7, SCK = PA1", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 8, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "MISO = PB4, MOSI = PA7, SCK = PA5", "pins": [
+		{ "index": 20, "function": "SPI1_MISO" },
+		{ "index": 14, "function": "SPI1_MOSI" },
+		{ "index": 12, "function": "SPI1_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PA3, MOSI = PA4, SCK = PA0", "pins": [
+		{ "index": 10, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PA3, MOSI = PA4, SCK = PB8", "pins": [
+		{ "index": 10, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 1, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PA3, MOSI = PB7, SCK = PA0", "pins": [
+		{ "index": 10, "function": "SPI2_MISO" },
+		{ "index": 1, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB2, MOSI = PA4, SCK = PA0", "pins": [
+		{ "index": 15, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB2, MOSI = PA4, SCK = PB8", "pins": [
+		{ "index": 15, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 1, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB2, MOSI = PB7, SCK = PA0", "pins": [
+		{ "index": 15, "function": "SPI2_MISO" },
+		{ "index": 1, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB6, MOSI = PA4, SCK = PA0", "pins": [
+		{ "index": 20, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB6, MOSI = PA4, SCK = PB8", "pins": [
+		{ "index": 20, "function": "SPI2_MISO" },
+		{ "index": 11, "function": "SPI2_MOSI" },
+		{ "index": 1, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "MISO = PB6, MOSI = PB7, SCK = PA0", "pins": [
+		{ "index": 20, "function": "SPI2_MISO" },
+		{ "index": 1, "function": "SPI2_MOSI" },
+		{ "index": 7, "function": "SPI2_SCK" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "NSS = PA15", "pins": [
+		{ "index": 19, "function": "SPI1_NSS" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "NSS = PA4", "pins": [
+		{ "index": 11, "function": "SPI1_NSS" }
+	] },
+	{ "group": "SPI", "name": "SPI1", "description": "NSS = PB0", "pins": [
+		{ "index": 15, "function": "SPI1_NSS" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "NSS = PA8", "pins": [
+		{ "index": 15, "function": "SPI2_NSS" }
+	] },
+	{ "group": "SPI", "name": "SPI2", "description": "NSS = PB9", "pins": [
+		{ "index": 2, "function": "SPI2_NSS" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH1 = PA8", "pins": [
+		{ "index": 15, "function": "TIM1_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH1N = PA7", "pins": [
+		{ "index": 14, "function": "TIM1_CH1N" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH2 = PB3", "pins": [
+		{ "index": 20, "function": "TIM1_CH2" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH2N = PB0", "pins": [
+		{ "index": 15, "function": "TIM1_CH2N" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH3 = PB6", "pins": [
+		{ "index": 20, "function": "TIM1_CH3" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH3N = PB1", "pins": [
+		{ "index": 15, "function": "TIM1_CH3N" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "CH4 = PA11", "pins": [
+		{ "index": 16, "function": "TIM1_CH4" }
+	] },
+	{ "group": "TIMER", "name": "TIM14", "description": "CH1 = PA4", "pins": [
+		{ "index": 11, "function": "TIM14_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM14", "description": "CH1 = PA7", "pins": [
+		{ "index": 14, "function": "TIM14_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM14", "description": "CH1 = PB1", "pins": [
+		{ "index": 15, "function": "TIM14_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM16", "description": "CH1 = PA6", "pins": [
+		{ "index": 13, "function": "TIM16_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM16", "description": "CH1 = PB8", "pins": [
+		{ "index": 1, "function": "TIM16_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM16", "description": "CH1N = PB6", "pins": [
+		{ "index": 20, "function": "TIM16_CH1N" }
+	] },
+	{ "group": "TIMER", "name": "TIM17", "description": "CH1 = PA7", "pins": [
+		{ "index": 14, "function": "TIM17_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM17", "description": "CH1 = PB9", "pins": [
+		{ "index": 2, "function": "TIM17_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM17", "description": "CH1N = PB7", "pins": [
+		{ "index": 1, "function": "TIM17_CH1N" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH1 = PA6", "pins": [
+		{ "index": 13, "function": "TIM3_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH1 = PB4", "pins": [
+		{ "index": 20, "function": "TIM3_CH1" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH2 = PA7", "pins": [
+		{ "index": 14, "function": "TIM3_CH2" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH2 = PB5", "pins": [
+		{ "index": 20, "function": "TIM3_CH2" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH3 = PB0", "pins": [
+		{ "index": 15, "function": "TIM3_CH3" }
+	] },
+	{ "group": "TIMER", "name": "TIM3", "description": "CH4 = PB1", "pins": [
+		{ "index": 15, "function": "TIM3_CH4" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "BK = PA6", "pins": [
+		{ "index": 13, "function": "TIM1_BK" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "BK2 = PA11", "pins": [
+		{ "index": 16, "function": "TIM1_BK2" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "BK2 = PC14", "pins": [
+		{ "index": 2, "function": "TIM1_BK2" }
+	] },
+	{ "group": "TIMER", "name": "TIM1", "description": "ETR = PA12", "pins": [
+		{ "index": 17, "function": "TIM1_ETR" }
+	] },
+	{ "group": "TIMER", "name": "TIM16", "description": "BK = PB5", "pins": [
+		{ "index": 20, "function": "TIM16_BK" }
+	] },
+	{ "group": "TIMER", "name": "TIM17", "description": "BK = PB4", "pins": [
+		{ "index": 20, "function": "TIM17_BK" }
+	] },
+	{ "group": "USART", "name": "USART1", "description": "TX = PB6, RX = PB7", "pins": [
+		{ "index": 1, "function": "USART1_TX" },
+		{ "index": 20, "function": "USART1_RX" }
+	] },
+	{ "group": "USART", "name": "USART2", "description": "TX = PA14, RX = PA15", "pins": [
+		{ "index": 19, "function": "USART2_TX/USART2_RX" }
+	] },
+	{ "group": "USART", "name": "USART2", "description": "TX = PA2, RX = PA3", "pins": [
+		{ "index": 9, "function": "USART2_TX" },
+		{ "index": 10, "function": "USART2_RX" }
+	] },
+	{ "group": "USART", "name": "USART1", "description": "CTS = PA11", "pins": [
+		{ "index": 16, "function": "USART1_CTS" }
+	] },
+	{ "group": "USART", "name": "USART1", "description": "CTS = PB4", "pins": [
+		{ "index": 20, "function": "USART1_CTS" }
+	] },
+	{ "group": "USART", "name": "USART2", "description": "CTS = PA0", "pins": [
+		{ "index": 7, "function": "USART2_CTS" }
+	] },
+	{ "group": "USART", "name": "USART1", "description": "RTS_DE_CK = PA12", "pins": [
+		{ "index": 17, "function": "USART1_RTS_DE_CK" }
+	] },
+	{ "group": "USART", "name": "USART1", "description": "RTS_DE_CK = PB3", "pins": [
+		{ "index": 20, "function": "USART1_RTS_DE_CK" }
+	] },
+	{ "group": "USART", "name": "USART2", "description": "RTS_DE_CK = PA1", "pins": [
+		{ "index": 8, "function": "USART2_RTS_DE_CK" }
+	] }
+]
