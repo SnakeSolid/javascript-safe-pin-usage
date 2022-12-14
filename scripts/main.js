@@ -221,7 +221,22 @@ requirejs(["vue", "colors"], function(vue, colors) {
 				}
 
 				for (const pin of this.pins) {
-					let translate = pin.position.align == "left" ? -1 : 1;
+					let translate;
+
+					switch (pin.position.align) {
+						case "left":
+							translate = -1.0;
+							break;
+
+						case "right":
+							translate = 1.0;
+							break;
+
+						case "none":
+						default:
+							continue;
+					}
+
 					let x = pin.position.x + centerX - image.width / 2;
 					let y = pin.position.y + centerY - image.height / 2;
 

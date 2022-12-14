@@ -11,5 +11,11 @@
 		"image": "/images/stm32g030f6p6-board.png",
 		"pins": "/data/pins-stm32g030-devebox.json",
 		"functions": "/data/functions-stm32g030.json"
+	}, {
+		"name": "STM32F401CDU6 board",
+		"description": "STM32F401CDU6 (Black pill)",
+		"image": "/images/stm32f401cdu6-board.png",
+		"pins": "/data/pins-stm32f401-board.json",
+		"functions": "/data/functions-stm32f401.json"
 	}
 ]
